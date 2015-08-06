@@ -1,0 +1,4 @@
+gelnarbot:
+    build: .
+    command: gelnarBot
+    working_dir: /vol/app
