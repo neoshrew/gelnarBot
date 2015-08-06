@@ -39,6 +39,7 @@ class GelnarBot(SingleServerIRCBot):
 			nouns = get_contained_nouns(message)
 			if len(nouns) > 0:
 				# Normall want the last noun
+				nouns = sorted(nouns, key=lambda x: len(x))
 				noun = nouns[-1]
 			else:
 				noun = get_noun()
@@ -95,11 +96,12 @@ def pop_nouns():
 def main():
 	pop_nouns()
 
-	server = 'registry-0.lohs.geneity'
+#	server = 'registry-0.lohs.geneity'
+	server = 'localhost'
 	port = 6667
 	nickname = 'gelnarBot'
-	channel = '#frontend'
-#	channel = '#test'
+#	channel = '#frontend'
+	channel = '#test'
 
 	bot = GelnarBot(channel, nickname, server, port)
 	bot.start()
