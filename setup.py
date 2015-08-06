@@ -10,7 +10,7 @@ setup(
 	],
 	entry_points={
 		'console_scripts': [
-			'gelnarBot=gelnar_bot:main',
+			'gelnarBot=gelnar_bot.gelnar_bot:main',
 		],
 	},
 )
