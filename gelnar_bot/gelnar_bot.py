@@ -60,6 +60,7 @@ def get_noun():
 
 def get_contained_nouns(cont_str):
 	words = [reduce_noun(i) for i in cont_str.split(' ')]
+	words = [i for i in words if i]
 
 	retval = []
 	for i in word_chunk_iter(words):
@@ -78,8 +79,7 @@ _LETTERS = set('abcdefghijklmnopqrstuvwxyz')
 def reduce_noun(noun):
 	n = noun.lower()
 	n = ''.join(
-		c for c in noun
-#		if c not in set("_' -")
+		c for c in n
 		if c in _LETTERS
 	)
 	return n
