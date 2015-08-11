@@ -108,3 +108,14 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
+def noun_test_console():
+	"""
+	Entry point for noun test console.
+	"""
+	pop_nouns()
+
+	while True:
+		message = raw_input("> ")
+		for noun in get_contained_nouns(message):
+			print noun

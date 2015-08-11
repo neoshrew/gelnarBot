@@ -11,6 +11,7 @@ setup(
 	entry_points={
 		'console_scripts': [
 			'gelnarBot=gelnar_bot.gelnar_bot:main',
+			'gelnarBot_console=gelnar_bot.gelnar_bot:noun_test_console',
 		],
 	},
 )
