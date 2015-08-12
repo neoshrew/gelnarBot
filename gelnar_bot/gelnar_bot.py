@@ -1,8 +1,14 @@
+import time
 import random
 
 from irc.bot import SingleServerIRCBot
 
+MESSAGE_THRESHOLD = 1
+
 class GelnarBot(SingleServerIRCBot):
+
+	last_msg_time = time.time()
+
 	def __init__(self, channel, nickname, server, port=6667):
 		super(GelnarBot, self).__init__([(server, port)], nickname, nickname)
 		self.channel = channel
@@ -19,6 +25,13 @@ class GelnarBot(SingleServerIRCBot):
 		self.do_command(c, nick, nick, message, True)
 
 	def on_pubmsg(self, c, e):
+		curr_time = time.time()
+
+		if self.last_msg_time + MESSAGE_THRESHOLD >= curr_time:
+			return
+
+		self.last_msg_time = curr_time
+
 		my_nick = self.connection.get_nickname()
 		nick = e.source.split('!')[0]
 		message = e.arguments[0]
