@@ -1,4 +1,4 @@
-EXCEPTIONS_MAP = { \
+PLURAL_EXCEPTIONS_MAP = { \
 	'women'    : 'woman', \
 	'men'      : 'man', \
 	'children' : 'child', \
@@ -30,3 +30,56 @@ EXCEPTIONS_MAP = { \
 	'criteria' : 'criterion', \
 	'data'     : 'datum', \
 }
+
+ARTICLE_EXCEPTIONS_LIST = [
+	'uber', \
+	'ubiety', \
+	'ubiquity', \
+	'udale', \
+	'udall', \
+	'uganda', \
+	'ukraine', \
+	'uinita', \
+	'ukase', \
+	'udy', \
+	'ueberroth', \
+	'ullyses', \
+	'udometer', \
+	'ufo', \
+	'ukelele', \
+	'uke', \
+	'ululate', \
+	'upas', \
+	'ural', \
+	'uranium', \
+	'uranus', \
+	'urea', \
+	'ureter', \
+	'urethra', \
+	'urine', \
+	'urology', \
+	'urus', \
+	'use', \
+	'usual', \
+	'usury', \
+	'usurp', \
+	'utensil', \
+	'uterus', \
+	'utility', \
+	'utopia', \
+	'utricle', \
+	'uvarovite', \
+	'uvea', \
+	'uvula', \
+	'one', \
+	'once', \
+]
+
+INDEF_ARTICLE_EXCEPTIONS_LIST = [
+	'heir', \
+	'heiress', \
+	'hour', \
+	'honor', \
+	'honour', \
+	'honest', \
+]

@@ -27,4 +27,4 @@ def noun_test_console():
 	while True:
 		message = raw_input("> ")
 		for noun in noun_util.get_contained_nouns(message):
-			print noun
+			print "{} {}".format(noun_util.get_article(noun), noun)

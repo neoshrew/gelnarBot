@@ -33,17 +33,23 @@ def reduce_noun(noun):
 	return n
 
 def get_article(noun):
-	regex = '[aeiou](?!n).*'
-	s = re.match(regex, noun)
-	if s is not None:
+	regex = '[aeiou].*'
+
+	if noun in EXCEPTIONS.ARTICLE_EXCEPTIONS_LIST or \
+		noun.startswith('eu') or \
+		noun.startswith('uni'):
+		return BASE_ARTICLE
+	elif noun in EXCEPTIONS.INDEF_ARTICLE_EXCEPTIONS_LIST or \
+		re.match(regex, noun) is not None:
 		return EXCEPTION_ARTICLE
-	return BASE_ARTICLE
+	else:
+		return BASE_ARTICLE
 
 def get_noun():
 	return random.choice(NOUNS.values())
 
 def stem(word):
-	exception_map = EXCEPTIONS.EXCEPTIONS_MAP
+	exception_map = EXCEPTIONS.PLURAL_EXCEPTIONS_MAP
 	plur_to_sing_map = {
 		'ies': 'y',
 		'es' : '',
